@@ -72,4 +72,6 @@ gem 'popper_js', '~> 1.14.5'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 
+gem "font-awesome-rails"
+
 end
