@@ -4,14 +4,15 @@
   <br/><br/>
   <p><%= @place.description %></p>
 
-  <% if @place.latitude.present? && @place.longitude.present? %>
+<% if @place.latitude.present? && @place.longitude.present? %>
 
-  
-  
+
+ 
+ 
   <script>
 
     function initMap() {
-      var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+  var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
@@ -24,27 +25,23 @@
         title: 'Hello World!'
       });
     }
-  
+  </script>
+
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSbLBjj4RVpmQ1RFZ-gfn7iq5I48lPnug&callback=initMap">
   </script>
 
 
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH-pCUF1xOJEDhAVFwPuBqyieul9F6q_M=initMap">
-
-</script>
-
-    <div id="map"></div>
+  <div id="map"></div>
   <% end %>
 
-  <br />
-
+  <br/>
 
 
   <div class="float-center">
-    <br/>
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
-      <%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
+      <%= link_to 'Delete', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
     <% end %>
   </div>
-</div>
+  </div>
