@@ -108,4 +108,21 @@
       <small><%= comment.user.email %></small>
     </blockquote>
   </div>
+
+  <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+  </br>
+  <%= f.input :caption %>
+  <%= f.input :place_id %>
+</br>
+
+
+
+  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+
+<% @place.photos.each do |photo| %>
+
 <% end %>
+<% end %>
+<% end %>
+
+
